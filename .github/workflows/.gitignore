@@ -1,0 +1,7 @@
+cat > .gitignore << 'EOF'
+__pycache__/
+.pytest_cache/
+playwright/.auth/
+snapshot_tests_failures/
+.DS_Store
+EOF
