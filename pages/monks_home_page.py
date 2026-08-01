@@ -16,4 +16,5 @@ class MonksHomePage():
     def click_solutions(self):
         self.solutions_link.click()
     def click_real_time_brands(self):
+        self.real_time_brands_link.wait_for(state="visible")
         self.real_time_brands_link.click()
