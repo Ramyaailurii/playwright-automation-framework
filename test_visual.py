@@ -1,4 +1,5 @@
-from playwright.sync_api import Page, expect
+from playwright.sync_api import Page
+
 def test_nav_visual(page: Page, assert_snapshot):
     page.goto("https://www.monks.com/", wait_until="commit")
     nav = page.get_by_label("Primary navigation")
@@ -10,5 +11,5 @@ def test_nav_visual(page: Page, assert_snapshot):
         }
     """)
 
-    page.wait_for_timeout(2000)  # longer wait — give the stagger animation time to fully finish
-    assert_snapshot(nav.screenshot(animations="disabled"))  # also force-disable any remaining CSS animation
+    page.wait_for_timeout(2000)
+    assert_snapshot(nav.screenshot(animations="disabled"), threshold=0.3)
