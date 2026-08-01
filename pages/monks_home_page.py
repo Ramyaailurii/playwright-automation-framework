@@ -14,7 +14,9 @@ class MonksHomePage():
         if self.accept_cookies_btn.is_visible():
             self.accept_cookies_btn.click()
     def click_solutions(self):
+        self.solutions_link.wait_for(state="visible")
         self.solutions_link.click()
+        self.page.wait_for_timeout(500)
     def click_real_time_brands(self):
         self.real_time_brands_link.wait_for(state="visible")
         self.real_time_brands_link.click()
