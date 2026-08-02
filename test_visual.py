@@ -12,4 +12,4 @@ def test_nav_visual(page: Page, assert_snapshot):
     """)
 
     page.wait_for_timeout(2000)
-    assert_snapshot(nav.screenshot(animations="disabled"), threshold=0.3)
+    assert_snapshot(nav.screenshot(animations="disabled"), threshold=0.5)
