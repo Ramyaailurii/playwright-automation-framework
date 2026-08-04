@@ -6,6 +6,7 @@ def test_mock_time_at_work(page: Page):
     page.get_by_placeholder("Username").fill("Admin")
     page.get_by_placeholder("Password").fill("admin123")
     page.get_by_role("button", name="Login").click()
+    page.wait_for_url("**/dashboard/index")
 
     mock_response = {
         "data": [
